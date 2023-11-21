@@ -1,20 +1,24 @@
 {% extends 'usuarios/base.html' %}
 {% block conteudo %}
 <div class="container">
-    <h1>Usuarios cadastrados:</h1>
-    <table class='table table-borded table-striped'>
-        <tr>
-            <th>id</th>
-            <th>nome</th>
-            <th>idade</th>
-        </tr>
-        {% for usuario in usuarios %}
-        <tr>
-            <td>{{usuario.id_usuario}}</td>
-            <td>{{usuario.nome}}</td>
-            <td>{{usuario.idade}}</td>
-        </tr>
-        {% endfor %}
+    <h1>Usuários cadastrados:</h1>
+    <table class='table table-bordered table-striped table-hover'>
+        <thead class='thead-dark'>
+            <tr>
+                <th>ID</th>
+                <th>Usuário</th>
+                <th>Senha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{usuario.id_usuario}}</td>
+                <td>{{usuario.usuario}}</td>
+                <td>{{usuario.senha}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </div>
 {% endblock %}
